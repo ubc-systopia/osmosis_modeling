@@ -52,6 +52,9 @@ class Resource(object):
     
     def add_dependency(self, dependency):
         self.dependencies.add(dependency)
+
+    def remove_dependency(self, dependency):
+        self.dependencies.discard(dependency)
     
     def __eq__(self, other : object) -> bool:
         if isinstance(other, Resource):

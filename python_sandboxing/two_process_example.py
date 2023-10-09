@@ -35,13 +35,14 @@ def main():
     draw_PD_resource_tree(PD_1, "_before")
     draw_PD_resource_tree(PD_2, "_before")
 
-    # Introduction of one shared memory page
-    code_two.add_dependency(pages[0])
+    # PD_1 shares heap memory with PD_2
+    heap_two.add_dependency(pages[2])
+    # PD_1 Gets scheduled on core 1
+    pcb_one.remove_dependency(cores[0])
+    pcb_one.add_dependency(cores[1])
     draw_PD_resource_tree(PD_1, "_after")
     draw_PD_resource_tree(PD_2, "_after")
-    view_graph_from_file()
-    
- 
+    view_graph_from_file() 
 
 
 if __name__ == "__main__":
