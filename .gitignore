@@ -1,0 +1,4 @@
+# ignore generated outputs
+python_sandboxing/env/**
+python_sandboxing/out/**
+**/__pycache__/
